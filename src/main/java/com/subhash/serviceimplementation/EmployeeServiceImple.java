@@ -1,7 +1,7 @@
-package com.subhash.service.implementation;
+package com.subhash.serviceimplementation;
 
 import com.subhash.entity.adapter.EmployeeAdapter;
-import com.subhash.hibernate.model.Employee;
+import com.subhash.hibernatemodel.Employee;
 import com.subhash.service.EmployeeService;
 
 public class EmployeeServiceImple implements EmployeeService{

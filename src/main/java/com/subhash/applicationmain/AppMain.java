@@ -1,7 +1,7 @@
-package com.subhash.hibernatemaster.hibernate;
+package com.subhash.applicationmain;
 
 import com.subhash.service.EmployeeService;
-import com.subhash.service.implementation.EmployeeServiceImple;
+import com.subhash.serviceimplementation.EmployeeServiceImple;
 
 public class AppMain 
 {

@@ -1,4 +1,4 @@
-package com.subhash.hibernate.model;
+package com.subhash.hibernatemodel;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
