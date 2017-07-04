@@ -1,6 +1,6 @@
-package com.subhash.entity.adapter;
+package com.subhash.entityadapter;
 
-import com.subhash.hibernate.entitymanager.MyEntityManager;
+import com.subhash.entitymanager.MyEntityManager;
 import com.subhash.hibernatemodel.Employee;
 
 public class EmployeeAdapter extends MyEntityManager{

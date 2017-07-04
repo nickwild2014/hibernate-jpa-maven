@@ -1,6 +1,6 @@
 package com.subhash.serviceimplementation;
 
-import com.subhash.entity.adapter.EmployeeAdapter;
+import com.subhash.entityadapter.EmployeeAdapter;
 import com.subhash.hibernatemodel.Employee;
 import com.subhash.service.EmployeeService;
 

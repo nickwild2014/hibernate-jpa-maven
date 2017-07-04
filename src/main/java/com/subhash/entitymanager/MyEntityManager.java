@@ -1,4 +1,4 @@
-package com.subhash.hibernate.entitymanager;
+package com.subhash.entitymanager;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
