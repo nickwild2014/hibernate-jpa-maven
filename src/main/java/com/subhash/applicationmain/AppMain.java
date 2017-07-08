@@ -15,6 +15,7 @@ public class AppMain
     	//service.addProperty();
     	System.out.println(service.getValueUsingID(new Employee(), "1"));
     	logger.info(" ************ add property finished ************ ");
+    	logger.info(" ************ add property finished ************ ");
     }
     
     
