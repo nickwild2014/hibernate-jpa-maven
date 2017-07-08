@@ -26,5 +26,17 @@ public class MyEntityManager {
 			ex.printStackTrace();
 		} 
 	}
+	
+	public EntityManager getEntityManager() {
+		try {
+			entityManagerFactory = Persistence
+					.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+			entityManager = entityManagerFactory.createEntityManager();
+			
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		} 
+		return entityManager;
+	}
 
 }
