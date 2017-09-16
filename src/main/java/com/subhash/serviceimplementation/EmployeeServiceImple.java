@@ -11,7 +11,6 @@ import com.subhash.service.EmployeeService;
 
 public class EmployeeServiceImple implements EmployeeService{
 
-	@Override
 	public void addProperty() {
 		
 		Employee e1 = new Employee();
@@ -20,7 +19,6 @@ public class EmployeeServiceImple implements EmployeeService{
 		
 	}
 
-	@Override
 	public String getValueUsingID(Employee e, String i) {
 		EntityManager entityManager = new MyEntityManager().getEntityManager();
 		entityManager.getTransaction().begin();

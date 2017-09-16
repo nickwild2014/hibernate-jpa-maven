@@ -12,8 +12,8 @@ public class AppMain
 	static EmployeeService service = new EmployeeServiceImple();
     public static void main( String[] args )
     {
-    	//service.addProperty();
-    	System.out.println(service.getValueUsingID(new Employee(), "1"));
+    	service.addProperty();
+    	//System.out.println(service.getValueUsingID(new Employee(), "1"));
     	logger.info(" ************ add property finished ************ ");
     	logger.info(" ************ add property finished ************ ");
     }
