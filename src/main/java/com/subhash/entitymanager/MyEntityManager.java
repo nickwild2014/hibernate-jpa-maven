@@ -11,8 +11,9 @@ public class MyEntityManager {
 	private final static String PERSISTENCE_UNIT_NAME = "MyPersistenceUnit";
 	@PersistenceUnit(name = "", unitName = "")
 	public static EntityManagerFactory entityManagerFactory;
+	
 	private static class SingletonHolder {  
-		static EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+		static final  EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
     }    
     public static EntityManagerFactory getEntityManagerFactoryInstance() {    
         return SingletonHolder.entityManagerFactory;    
@@ -20,6 +21,7 @@ public class MyEntityManager {
 	public MyEntityManager() {
 		try {
 			entityManagerFactory = getEntityManagerFactoryInstance();
+			//entityManagerFactory= Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
 			entityManager = entityManagerFactory.createEntityManager();
 		} catch (Exception ex) {
 			ex.printStackTrace();

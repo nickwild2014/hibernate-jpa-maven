@@ -9,15 +9,24 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.UniqueConstraint;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 // @Table(name = "SERVICELOG", catalog = "", schema = "THEMEBRIDGE")
-@Table(name = "Employeeee")
+@Table(name = "Employeeee", uniqueConstraints = @UniqueConstraint(columnNames = "service"))
 @XmlRootElement
-public class Employee implements Serializable {
+@NamedQueries({ @NamedQuery(name = "Employeeee.findAll", query = "SELECT e FROM Employeeee e") })
+public class Employeeee implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	// @Max(value=?) @Min(value=?)//if you know range of your decimal fields
@@ -30,15 +39,58 @@ public class Employee implements Serializable {
 	private BigDecimal id;
 	@Column(name = "SERVICE")
 	private String service;
+	
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+
+	//@OneToOne
+	@ManyToOne
+	private Department department;
+	@Lob
+	private byte[] picture;
+
+	public byte[] getPicture() {
+		return picture;
+	}
+
+	public void setPicture(byte[] picture) {
+		this.picture = picture;
+	}
+
+	public java.util.Calendar getDob() {
+		return dob;
+	}
+
+	public void setDob(java.util.Calendar dob) {
+		this.dob = dob;
+	}
+
 	@Column(name = "OPERATION")
 	private String operation;
 	@Column(name = "BRANCH")
 	private String branch;
-	
-	public Employee() {
+	@Column(name = "START_DATE", columnDefinition = "DATE DEFAULT CURRENT_DATE")
+	private java.sql.Date startDate;
+	@Temporal(TemporalType.DATE)
+	private java.util.Calendar dob;
+
+	public java.sql.Date getStartDate() {
+		return startDate;
 	}
 
-	public Employee(BigDecimal id) {
+	public void setStartDate(java.sql.Date startDate) {
+		this.startDate = startDate;
+	}
+
+	public Employeeee() {
+	}
+
+	public Employeeee(BigDecimal id) {
 		this.id = id;
 	}
 
@@ -66,7 +118,6 @@ public class Employee implements Serializable {
 		this.operation = operation;
 	}
 
-
 	public String getBranch() {
 		return branch;
 	}
@@ -74,7 +125,6 @@ public class Employee implements Serializable {
 	public void setBranch(String branch) {
 		this.branch = branch;
 	}
-
 
 	@Override
 	public int hashCode() {
@@ -87,10 +137,10 @@ public class Employee implements Serializable {
 	public boolean equals(Object object) {
 		// TODO: Warning - this method won't work in the case the id fields are
 		// not set
-		if (!(object instanceof Employee)) {
+		if (!(object instanceof Employeeee)) {
 			return false;
 		}
-		Employee other = (Employee) object;
+		Employeeee other = (Employeeee) object;
 		if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
 			return false;
 		}
@@ -99,6 +149,6 @@ public class Employee implements Serializable {
 
 	@Override
 	public String toString() {
-		return "com.bs.themebridge.entity.model.Servicelog[ id=" + id + " ]";
+		return "com.subhash.hibernatemodel.Employeeee[ id=\" + id + \", service=\" + service + \", branch=\" + branch + \", operation=\" + operation + \" ]";
 	}
 }

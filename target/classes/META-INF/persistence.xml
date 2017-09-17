@@ -6,7 +6,8 @@
 	<!-- Tis connection for local -->
 	<persistence-unit name="MyPersistenceUnit" transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-		<class>com.subhash.hibernatemodel.Employee</class>
+		<class>com.subhash.hibernatemodel.Employeeee</class>
+		<class>com.subhash.hibernatemodel.Department</class>
 		<properties>
 		<property name="eclipselink.ddl-generation" value="create-tables"/>
 			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver" />
