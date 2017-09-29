@@ -26,7 +26,7 @@ public class AppMain
     	service.addProperty();
     	//getValueFromKey();
     	
-    	//service.removePropertyById(new Employeeee(), "59");			
+    	service.removePropertyById(new Employeeee(), "59");			
     	//service.removePropertyById(new Employeeee(), "63");
     	//service.removePropertyById(new Employeeee(), "69");
     	//System.out.println(service.findValueUsingID(new Employeeee(), "57"));
